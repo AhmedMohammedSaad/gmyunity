@@ -3,6 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gymumity/core/theme/app_text_style.dart';
 import 'package:gymumity/core/routing/routes.dart';
+import 'package:gymumity/features/auth/presentation/view/login_view.dart';
+import 'package:gymumity/features/auth/presentation/view/signup_view.dart';
 import '../widgets/onboarding_branding_widget.dart';
 import '../widgets/onboarding_headline_widget.dart';
 import '../widgets/onboarding_cta_button.dart';
@@ -31,7 +33,10 @@ class OnboardingContentSection extends StatelessWidget {
             text: 'GET STARTED',
             icon: Icons.arrow_forward,
             onTap: () {
-              Navigator.pushNamed(context, Routes.signup);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignupView()),
+              );
             },
           ).animate().fadeIn(delay: 1100.ms).slideY(begin: 0.1, end: 0),
           SizedBox(height: 16.h),
@@ -39,7 +44,10 @@ class OnboardingContentSection extends StatelessWidget {
             text: 'SIGN IN',
             isPrimary: false,
             onTap: () {
-              Navigator.pushNamed(context, Routes.login);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginView()),
+              );
             },
           ).animate().fadeIn(delay: 1300.ms).slideY(begin: 0.1, end: 0),
           SizedBox(height: 40.h), // Safe area bottom padding

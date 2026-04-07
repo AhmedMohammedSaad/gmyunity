@@ -4,6 +4,7 @@ import 'package:gymumity/features/auth/presentation/view/login_view.dart';
 import 'package:gymumity/features/auth/presentation/view/signup_view.dart';
 import 'package:gymumity/features/auth/presentation/view/forget_password_view.dart';
 import 'package:gymumity/features/onboarding/presentation/view/onboarding_view.dart';
+import 'package:gymumity/features/home/presentation/view/home_view.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
@@ -16,6 +17,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SignupView());
       case Routes.forgetPassword:
         return MaterialPageRoute(builder: (_) => const ForgetPasswordView());
+      case Routes.home:
+        return MaterialPageRoute(builder: (_) => const HomeView());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
